@@ -3,7 +3,15 @@ package iv_properties
 import util.TODO
 
 class LazyProperty(val initializer: () -> Int) {
-    val lazy: Int = todoTask33()
+    var value: Int? = null
+    val lazy: Int
+        get() {
+            // 这里只要不用field就不会有警告, 因为field没有初始化
+            if (value == null) {
+                value = initializer()
+            }
+            return value!!
+        }
 }
 
 fun todoTask33(): Nothing = TODO(

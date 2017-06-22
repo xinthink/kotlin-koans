@@ -1,6 +1,7 @@
 out
 workspace.xml
 .idea
+*.iml
 .gradle
 build
 local.properties

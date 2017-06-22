@@ -7,6 +7,7 @@ import org.junit.Test
 class _35_Delegates_How_It_Works {
     @Test fun testDate() {
         val d = D()
+        assertEquals(1970, d.date.year)
         d.date = MyDate(2014, 1, 13)
         assertEquals(2014, d.date.year)
         assertEquals(1, d.date.month)
